@@ -1,14 +1,13 @@
 var pigTranslationModule = function() {
 
   function toPig(englishString) {
-    var testString = englishString.toLowerCase();
-    var strArray = testString.split(" ");
+    var strArray = englishString.split(" ");
     var newPigSent = "";
 
     for (var i = 0; i < strArray.length; i++) {
       var prePigWord = strArray[i].split("");
       for (var j = 0; j < prePigWord.length; j++) {
-        if (prePigWord[j] === "a" || prePigWord[j] === "e" || prePigWord[j] === "i" || prePigWord[j] === "o" || prePigWord[j] === "u") {
+        if (["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].indexOf(prePigWord[j] !== -1)) {
           prePigWord.push("-" + prePigWord.splice(0, j).join("") + "ay");
           break;
         }
@@ -19,8 +18,7 @@ var pigTranslationModule = function() {
   }
 
   function toEnglish(pigString) {
-    var lowerString = pigString.toLowerCase();
-    var strArray = lowerString.split(" ");
+    var strArray = pigString.split(" ");
     var newEngSent = "";
 
     for (var i = 0; i < strArray.length; i++) {
