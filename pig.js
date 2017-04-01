@@ -1,20 +1,25 @@
 var pigTranslationModule = function() {
 
-  function toPig(englishString) {
-    var strArray = englishString.split(" ");
-    var newPigSent = "";
+  function toPig(string) {
+    let strArray = string.split(" ");
+    let pigSent = "";
 
     for (var i = 0; i < strArray.length; i++) {
-      var prePigWord = strArray[i].split("");
-      for (var j = 0; j < prePigWord.length; j++) {
-        if (["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].indexOf(prePigWord[j] !== -1)) {
-          prePigWord.push("-" + prePigWord.splice(0, j).join("") + "ay");
-          break;
+      let prePig = strArray[i].split("");
+      for (var j = 0; j < prePig.length; j++) {
+        if (["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"].indexOf(prePig[j]) !== -1) {
+          if (j === 0) {
+            prePig.push("-ay");
+            break;
+          } else {
+            prePig.push("-" + prePig.splice(0, j).join("") + "ay");
+            break;
+          }
         }
       }
-      newPigSent += prePigWord.join("") + " ";
+      pigSent += prePig.join("") + " ";
     }
-    return newPigSent;
+    return pigSent;
   }
 
   function toEnglish(pigString) {
@@ -42,7 +47,4 @@ var pigTranslationModule = function() {
   };
 }();
 
-
-console.log(pigTranslationModule.toPig("This is a super long test to see if my code is working"));
-console.log(pigTranslationModule.toPig("Uganda is a country"));
-console.log(pigTranslationModule.toEnglish("ig-Pay appy-hay uck-day"));
+module.exports = pigTranslationModule;
