@@ -9,13 +9,13 @@ describe("toPig", () => {
   });
 
   it("should translate single words to pig", () => {
-    expect(pig.toPig("pig")).to.equal("ig-pay ");
-    expect(pig.toPig("apple")).to.equal("apple-ay ");
-    expect(pig.toPig("fast")).to.equal("ast-fay ");
+    expect(pig.toPig("pig")).to.equal("ig-pay");
+    expect(pig.toPig("apple")).to.equal("apple-ay");
+    expect(pig.toPig("fast")).to.equal("ast-fay");
   });
 
   it("should translate sentences to pig", () => {
-    expect(pig.toPig("Turn this to pig please")).to.equal("urn-Tay is-thay o-tay ig-pay ease-play ");
+    expect(pig.toPig("Turn this to pig please")).to.equal("urn-Tay is-thay o-tay ig-pay ease-play");
   });
 });
 
@@ -25,12 +25,12 @@ describe("toEnglish", () => {
   });
 
   it("should translate single words", () => {
-    expect(pig.toEnglish("ig-pay")).to.equal("pig ");
-    expect(pig.toEnglish("apple-ay")).to.equal("apple ");
-    expect(pig.toEnglish("ast-fay")).to.equal("fast ");
+    expect(pig.toEnglish("ig-pay")).to.equal("pig");
+    expect(pig.toEnglish("apple-ay")).to.equal("apple");
+    expect(pig.toEnglish("ast-fay")).to.equal("fast");
   });
 
   it("should translate sentences", () => {
-    expect(pig.toEnglish("urn-Tay is-thay o-tay ig-pay ease-play")).to.equal("Turn this to pig please ");
+    expect(pig.toEnglish("urn-Tay is-thay o-tay ig-pay ease-play")).to.equal("Turn this to pig please");
   });
 });

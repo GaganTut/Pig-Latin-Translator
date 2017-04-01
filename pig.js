@@ -19,6 +19,9 @@ var pigTranslationModule = function() {
       }
       pigSent += prePig.join("") + " ";
     }
+    pigSent = pigSent.split("");
+    pigSent.pop();
+    pigSent = pigSent.join("");
     return pigSent;
   }
 
@@ -37,6 +40,9 @@ var pigTranslationModule = function() {
 
       newEngSent += preEngWord.join("") + " ";
     }
+    newEngSent = newEngSent.split("");
+    newEngSent.pop();
+    newEngSent = newEngSent.join("");
     return newEngSent;
   }
 
